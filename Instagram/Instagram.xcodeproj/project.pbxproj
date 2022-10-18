@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA24547128FDA56A0048E127 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24547028FDA56A0048E127 /* PostTableViewCell.swift */; };
 		FAC681B128FD499800D3346D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC681B028FD499800D3346D /* AppDelegate.swift */; };
 		FAC681B328FD499800D3346D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC681B228FD499800D3346D /* SceneDelegate.swift */; };
 		FAC681B528FD499800D3346D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC681B428FD499800D3346D /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA24547028FDA56A0048E127 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		FAC681AD28FD499800D3346D /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC681B028FD499800D3346D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC681B228FD499800D3346D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				FAC681B928FD499900D3346D /* Assets.xcassets */,
 				FAC681BB28FD499900D3346D /* LaunchScreen.storyboard */,
 				FAC681BE28FD499900D3346D /* Info.plist */,
+				FA24547028FDA56A0048E127 /* PostTableViewCell.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				FAC681B528FD499800D3346D /* ViewController.swift in Sources */,
 				FAC681B128FD499800D3346D /* AppDelegate.swift in Sources */,
 				FAC681B328FD499800D3346D /* SceneDelegate.swift in Sources */,
+				FA24547128FDA56A0048E127 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

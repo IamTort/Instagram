@@ -18,6 +18,7 @@ final class PostTableViewCell: UITableViewCell {
     @IBOutlet private weak var postLabel: UILabel!
     @IBOutlet private weak var commentImageView: UIImageView!
     
+    // MARK: - methods
     func setupData(post: Post) {
         avatarImageView.image = UIImage(named: post.image)
         nickNameLabel.text = post.nickName
@@ -27,6 +28,7 @@ final class PostTableViewCell: UITableViewCell {
         commentImageView.image = UIImage(named: post.image)
     }
     
+    // MARK: - Private methods
     private func setupDeliveryDateLabel(post: Post) -> NSMutableAttributedString {
         let myMutableString = NSMutableAttributedString(string: "\(post.nickName) \(post.postText)")
         myMutableString.addAttribute(

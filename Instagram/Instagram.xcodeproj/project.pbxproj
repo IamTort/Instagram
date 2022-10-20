@@ -15,6 +15,11 @@
 		FAC681BA28FD499900D3346D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC681B928FD499900D3346D /* Assets.xcassets */; };
 		FAC681BD28FD499900D3346D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC681BB28FD499900D3346D /* LaunchScreen.storyboard */; };
 		FACED65E290005C800449885 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACED65D290005C800449885 /* Post.swift */; };
+		FACED66829009B7F00449885 /* ActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACED66729009B7F00449885 /* ActionsTableViewController.swift */; };
+		FACED66A2901327D00449885 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACED6692901327D00449885 /* Comment.swift */; };
+		FACED66C2901339900449885 /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACED66B2901339900449885 /* Follow.swift */; };
+		FACED66E2901351900449885 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACED66D2901351900449885 /* CommentTableViewCell.swift */; };
+		FACED6702901352C00449885 /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACED66F2901352C00449885 /* FollowTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		FAC681BC28FD499900D3346D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC681BE28FD499900D3346D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FACED65D290005C800449885 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FACED66729009B7F00449885 /* ActionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewController.swift; sourceTree = "<group>"; };
+		FACED6692901327D00449885 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		FACED66B2901339900449885 /* Follow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
+		FACED66D2901351900449885 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		FACED66F2901352C00449885 /* FollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,14 +73,27 @@
 				FAC681B028FD499800D3346D /* AppDelegate.swift */,
 				FAC681B228FD499800D3346D /* SceneDelegate.swift */,
 				FAC681B428FD499800D3346D /* MainPageViewController.swift */,
+				FA24547028FDA56A0048E127 /* PostTableViewCell.swift */,
 				FAC681B628FD499800D3346D /* Main.storyboard */,
 				FAC681B928FD499900D3346D /* Assets.xcassets */,
 				FAC681BB28FD499900D3346D /* LaunchScreen.storyboard */,
 				FAC681BE28FD499900D3346D /* Info.plist */,
-				FA24547028FDA56A0048E127 /* PostTableViewCell.swift */,
-				FACED65D290005C800449885 /* Post.swift */,
+				FACED66729009B7F00449885 /* ActionsTableViewController.swift */,
+				FACED66D2901351900449885 /* CommentTableViewCell.swift */,
+				FACED66F2901352C00449885 /* FollowTableViewCell.swift */,
+				FACED6712901C5DF00449885 /* Model */,
 			);
 			path = Instagram;
+			sourceTree = "<group>";
+		};
+		FACED6712901C5DF00449885 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FACED65D290005C800449885 /* Post.swift */,
+				FACED6692901327D00449885 /* Comment.swift */,
+				FACED66B2901339900449885 /* Follow.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,8 +191,13 @@
 			files = (
 				FAC681B528FD499800D3346D /* MainPageViewController.swift in Sources */,
 				FAC681B128FD499800D3346D /* AppDelegate.swift in Sources */,
+				FACED66C2901339900449885 /* Follow.swift in Sources */,
+				FACED66829009B7F00449885 /* ActionsTableViewController.swift in Sources */,
+				FACED66A2901327D00449885 /* Comment.swift in Sources */,
+				FACED66E2901351900449885 /* CommentTableViewCell.swift in Sources */,
 				FAC681B328FD499800D3346D /* SceneDelegate.swift in Sources */,
 				FA24547128FDA56A0048E127 /* PostTableViewCell.swift in Sources */,
+				FACED6702901352C00449885 /* FollowTableViewCell.swift in Sources */,
 				FACED65E290005C800449885 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

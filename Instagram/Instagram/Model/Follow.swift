@@ -9,7 +9,7 @@ import Foundation
 
 /// Модель ячейки с подпиской
 struct Follow {
-    let userImage: String
+    let userImageName: String
     let text: String
-    let buttonView: Bool
+    let isFollow: Bool
 }

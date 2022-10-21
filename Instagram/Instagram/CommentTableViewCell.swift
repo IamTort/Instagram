@@ -17,9 +17,9 @@ final class CommentTableViewCell: UITableViewCell {
     
     // MARK: - Puplic method
     func setupData(comment: Comment) {
-        userImageView.image = UIImage(named: comment.userImage)
+        userImageView.image = UIImage(named: comment.userImageName)
         commentLabel.attributedText = setupDeliveryDateLabel(comment: comment)
-        friendImageView.image = UIImage(named: comment.friendImage)
+        friendImageView.image = UIImage(named: comment.friendImageName)
     }
 
     // MARK: - Private method

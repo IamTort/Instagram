@@ -9,9 +9,9 @@ import Foundation
 
 /// Модель ячейки с комментарием
 struct Comment {
-    let userImage: String
+    let userImageName: String
     let name: String
     let postText: String
-    let friendImage: String
+    let friendImageName: String
     let time: String
 }

@@ -21,12 +21,12 @@ final class FollowTableViewCell: UITableViewCell {
     
     // MARK: - Public method
     func setupData(follow: Follow) {
-        switch follow.buttonView {
+        switch follow.isFollow {
         case true:
-            userImageView.image = UIImage(named: follow.userImage)
+            userImageView.image = UIImage(named: follow.userImageName)
             followLabel.text = follow.text
         case false:
-            userImageView.image = UIImage(named: follow.userImage)
+            userImageView.image = UIImage(named: follow.userImageName)
             followLabel.text = follow.text
             createButton()
         }

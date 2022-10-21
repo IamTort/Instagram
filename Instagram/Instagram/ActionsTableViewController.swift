@@ -16,26 +16,26 @@ final class ActionsTableViewController: UITableViewController {
         static let weekText = "На этой неделе"
         static let todayText = "Сегодня"
         static let emptyText = ""
-        static let followArray = [Follow(userImage: "cat",
+        static let follows = [Follow(userImageName: "cat",
                                                text: "zvenkova есть в Instagram. Вы можете знать этого человека.",
-                                               buttonView: true),
-                                Follow(userImage: "images",
-                        text: "zvenkova есть в Instagram. Вы можете знать этого человека.", buttonView: true),
-                                Follow(userImage: "images", text: "zvenkova подписался(-ась) на ваши обновления.",
-                                            buttonView: false)]
-        static let commentArray = [Comment(userImage: "images", name: "mark_antonov",
-                                       postText: "нравится ваше видео.", friendImage: "cat", time: "2 days"),
-                               Comment(userImage: "catTwo", name: "olga2r",
+                                               isFollow: true),
+                                Follow(userImageName: "images",
+                        text: "zvenkova есть в Instagram. Вы можете знать этого человека.", isFollow: true),
+                                Follow(userImageName: "images", text: "zvenkova подписался(-ась) на ваши обновления.",
+                                            isFollow: false)]
+        static let commentArray = [Comment(userImageName: "images", name: "mark_antonov",
+                                       postText: "нравится ваше видео.", friendImageName: "cat", time: "2 days"),
+                               Comment(userImageName: "catTwo", name: "olga2r",
                     postText: "упомянул(-а) вас в комментарии: спасибо,  и вам того же",
-                                       friendImage: "cat", time: "1 days"),
-                               Comment(userImage: "images", name: "olga",
+                                       friendImageName: "cat", time: "1 days"),
+                               Comment(userImageName: "images", name: "olga",
                     postText: "понравился ваш комментарий: \"беспощадность наше всё\"",
-                                       friendImage: "cat", time: "54 days"),
-                               Comment(userImage: "cat", name: "olga",
-                                       postText: "нравится ваше видео.", friendImage: "cat", time: "4 day"),
-                               Comment(userImage: "catTwo", name: "olga",
+                                       friendImageName: "cat", time: "54 days"),
+                               Comment(userImageName: "cat", name: "olga",
+                                       postText: "нравится ваше видео.", friendImageName: "cat", time: "4 day"),
+                               Comment(userImageName: "catTwo", name: "olga",
                     postText: "упомянул(-а) вас в комментарии: @nsjared и @alexKokh, спасибо",
-                                       friendImage: "images", time: "7 day")]
+                                       friendImageName: "images", time: "7 day")]
     }
     
     private enum TableCellsTypes {
@@ -43,12 +43,17 @@ final class ActionsTableViewController: UITableViewController {
         case follow
     }
     
+    private enum TableSectionTypes: Int {
+        case today = 0
+        case lastWeek = 1
+    }
+    
     // MARK: - Private property
     private let cellsTypes: [TableCellsTypes] = [.follow, .comment]
-    private let secondSection: [TableCellsTypes] = [.follow, .comment, .follow, .comment, .comment]
-    private let refresh = UIRefreshControl()
-    private let commentsRow = Constants.commentArray
-    private let followRow = Constants.followArray
+    private let secondSections: [TableCellsTypes] = [.follow, .comment, .follow, .comment, .comment]
+    private let refreshContrl = UIRefreshControl()
+    private let comments = Constants.commentArray
+    private let follows = Constants.follows
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -63,13 +68,13 @@ final class ActionsTableViewController: UITableViewController {
     }
     
     private func setupRefresh() {
-        refresh.addTarget(self, action: #selector(handleRefreshAction), for: .valueChanged)
-        tableView.addSubview(refresh)
+        refreshContrl.addTarget(self, action: #selector(handleRefreshAction), for: .valueChanged)
+        tableView.addSubview(refreshContrl)
     }
     
     // MARK: - Private Action
     @objc private func handleRefreshAction() {
-        refresh.endRefreshing()
+        refreshContrl.endRefreshing()
     }
     
     // MARK: - Table view data source
@@ -86,9 +91,9 @@ final class ActionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case 0:
+        case TableSectionTypes.today.rawValue:
             return Constants.todayText
-        case 1:
+        case TableSectionTypes.lastWeek.rawValue:
             return Constants.weekText
         default:
             return Constants.emptyText
@@ -101,10 +106,10 @@ final class ActionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
+        case TableSectionTypes.today.rawValue:
             return cellsTypes.count
-        case 1:
-            return secondSection.count
+        case TableSectionTypes.lastWeek.rawValue:
+            return secondSections.count
         default:
             return 0
         }
@@ -112,22 +117,18 @@ final class ActionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellstype = secondSection[indexPath.row]
+        let cellstype = secondSections[indexPath.row]
         switch cellstype {
         case .comment:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.commentIdentifier, for: indexPath)
                     as? CommentTableViewCell else { return UITableViewCell() }
-            cell.setupData(comment: commentsRow[indexPath.row])
+            cell.setupData(comment: comments[indexPath.row])
             return cell
         case .follow:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followIdentifier, for: indexPath)
                     as? FollowTableViewCell else { return UITableViewCell() }
-            cell.setupData(follow: followRow[indexPath.row])
+            cell.setupData(follow: follows[indexPath.row])
             return cell
         }
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

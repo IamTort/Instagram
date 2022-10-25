@@ -25,9 +25,11 @@ final class ProfileTableViewController: UITableViewController {
         case images
     }
     
+    // MARK: - Private Visual Components
+    private let refreshContrl = UIRefreshControl()
+
     // MARK: - Private property
     private let cellsTypes: [TableCellsTypes] = [.avatar, .info, .stories, .images]
-    private let refreshContrl = UIRefreshControl()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -46,7 +48,6 @@ final class ProfileTableViewController: UITableViewController {
         tableView.addSubview(refreshContrl)
     }
     
-    // MARK: - Private Action
     @objc private func handleRefreshAction() {
         refreshContrl.endRefreshing()
     }

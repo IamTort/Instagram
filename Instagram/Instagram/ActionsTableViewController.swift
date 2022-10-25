@@ -48,10 +48,12 @@ final class ActionsTableViewController: UITableViewController {
         case lastWeek = 1
     }
     
+    // MARK: - Private Visual Componants
+    private let refreshContrl = UIRefreshControl()
+
     // MARK: - Private property
     private let cellsTypes: [TableCellsTypes] = [.follow, .comment]
     private let secondSections: [TableCellsTypes] = [.follow, .comment, .follow, .comment, .comment]
-    private let refreshContrl = UIRefreshControl()
     private let comments = Constants.commentArray
     private let follows = Constants.follows
     
